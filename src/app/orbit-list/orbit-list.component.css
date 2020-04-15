@@ -26,3 +26,12 @@ th, td {
   margin: 5px 10px;
   padding: 6px;
 }
+
+/* BONUS: Zebra stripes!
+ * These two :not selectors will make sure .header-row and .warning are not included.
+ * And as much as I bet you were hoping for an Angular answer, modifying the CSS is better.
+ * K.I.S.S.!
+ */
+tr:not(.header-row):not(.warning):nth-child(even){
+  background-color: goldenrod;
+}
