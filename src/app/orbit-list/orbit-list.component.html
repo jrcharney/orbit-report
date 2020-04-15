@@ -1,0 +1,20 @@
+<h3>Orbit Report</h3>
+<table>
+  <tr class="header-row">
+    <th class="sortable" (click)="sort('name')">Name</th>
+    <th class="sortable" (click)="sort('type')">Type</th>
+    <th>Operational</th>
+    <th>Orbit Type</th>
+    <th>Launch Date</th>
+  </tr>
+  <!-- putting the class.warning in tr makes it look better but applies to the entire row. -->
+  <!-- putting the class.waring in the td applies it to just that cell. -->
+  <!-- Since we are just doing this for one piece of info, may as well apply it to the row -->
+  <tr *ngFor="let satellite of satellites"  [class.warning]="satellite.shouldShowWarning()">
+    <td>{{satellite.name}}</td>
+    <td>{{satellite.type}}</td>
+    <td>{{satellite.operational}}</td>
+    <td>{{satellite.orbitType}}</td>
+    <td>{{satellite.launchDate}}</td>
+  </tr>
+</table>
